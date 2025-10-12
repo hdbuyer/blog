@@ -1,226 +1,223 @@
-# The Site Configuration
+# ================================================================
+# 网站基础设置
+# ================================================================
 
-# Import the theme
+# 网站标题
+title: "你的博客标题"
+# 网站描述（用于SEO）
+description: "分享我的技术学习和生活感悟"
+# 网站标签行
+tagline: "记录成长，分享知识"
+# 网站关键词
+keywords: "博客, 技术, 学习"
+
+# ================================================================
+# URL设置 - 针对 blog 仓库特别重要！
+# ================================================================
+
+# 网站完整URL（你的GitHub用户名）
+url: "https://hdbuyer.github.io"
+# 基础URL路径（必须设置为你的仓库名）
+baseurl: "/blog"
+
+# ================================================================
+# Jekyll 设置
+# ================================================================
+
+# 主题设置（Chirpy主题）
 theme: jekyll-theme-chirpy
 
-# The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
-# If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
-# otherwise, the layout language will use the default value of 'en'.
-lang: en
-
-# Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
-timezone:
-
-# jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
-# ↓ --------------------------
-
-title: Chirpy # the main title
-
-tagline: A text-focused Jekyll theme # it will display as the subtitle
-
-description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
-
-# Fill in the protocol & hostname for your site.
-# E.g. 'https://username.github.io', note that it does not end with a '/'.
-url: ""
-
-github:
-  username: github_username # change to your GitHub username
-
-twitter:
-  username: twitter_username # change to your Twitter username
-
-social:
-  # Change to your full name.
-  # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: your_full_name
-  email: example@domain.com # change to your email address
-  links:
-    # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your Twitter homepage
-    - https://github.com/username # change to your GitHub homepage
-    # Uncomment below to add more social links
-    # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/username
-
-# Site Verification Settings
-webmaster_verifications:
-  google: # fill in your Google verification code
-  bing: # fill in your Bing verification code
-  alexa: # fill in your Alexa verification code
-  yandex: # fill in your Yandex verification code
-  baidu: # fill in your Baidu verification code
-  facebook: # fill in your Facebook verification code
-
-# ↑ --------------------------
-# The end of `jekyll-seo-tag` settings
-
-# Web Analytics Settings
-analytics:
-  google:
-    id: # fill in your Google Analytics ID
-  goatcounter:
-    id: # fill in your GoatCounter ID
-  umami:
-    id: # fill in your Umami ID
-    domain: # fill in your Umami domain
-  matomo:
-    id: # fill in your Matomo ID
-    domain: # fill in your Matomo domain
-  cloudflare:
-    id: # fill in your Cloudflare Web Analytics token
-  fathom:
-    id: # fill in your Fathom Site ID
-
-# Page views settings
-pageviews:
-  provider: # now only supports 'goatcounter'
-
-# Prefer color scheme setting.
-#
-# Note: Keep empty will follow the system prefer color by default,
-# and there will be a toggle to switch the theme between dark and light
-# on the bottom left of the sidebar.
-#
-# Available options:
-#
-#     light — Use the light color scheme
-#     dark — Use the dark color scheme
-#
-theme_mode: # [light | dark]
-
-# The CDN endpoint for media resources.
-# Notice that once it is assigned, the CDN url
-# will be added to all media resources (site avatar, posts' images, audio and video files) paths starting with '/'
-#
-# e.g. 'https://cdn.com'
-cdn:
-
-# the avatar on sidebar, support local or CORS resources
-avatar:
-
-# The URL of the site-wide social preview image used in SEO `og:image` meta tag.
-# It can be overridden by a customized `page.image` in front matter.
-social_preview_image: # string, local or CORS resources
-
-# boolean type, the global switch for TOC in posts.
-toc: true
-
-comments:
-  # Global switch for the post-comment system. Keeping it empty means disabled.
-  provider: # [disqus | utterances | giscus]
-  # The provider options are as follows:
-  disqus:
-    shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
-  # utterances settings › https://utteranc.es/
-  utterances:
-    repo: # <gh-username>/<repo>
-    issue_term: # < url | pathname | title | ...>
-  # Giscus options › https://giscus.app
-  giscus:
-    repo: # <gh-username>/<repo>
-    repo_id:
-    category:
-    category_id:
-    mapping: # optional, default to 'pathname'
-    strict: # optional, default to '0'
-    input_position: # optional, default to 'bottom'
-    lang: # optional, default to the value of `site.lang`
-    reactions_enabled: # optional, default to the value of `1`
-
-# Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
-assets:
-  self_host:
-    enabled: # boolean, keep empty means false
-    # specify the Jekyll environment, empty means both
-    # only works if `assets.self_host.enabled` is 'true'
-    env: # [development | production]
-
-pwa:
-  enabled: true # The option for PWA feature (installable)
-  cache:
-    enabled: true # The option for PWA offline cache
-    # Paths defined here will be excluded from the PWA cache.
-    # Usually its value is the `baseurl` of another website that
-    # shares the same domain name as the current website.
-    deny_paths:
-      # - "/example"  # URLs match `<SITE_URL>/example/*` will not be cached by the PWA
-
+# 永久链接格式
+permalink: /posts/:title/
+permalink_defaults: 
 paginate: 10
+paginate_path: /page:num/
 
-# The base URL of your site
-baseurl: ""
+# 时区设置
+timezone: Asia/Shanghai
 
-# ------------ The following options are not recommended to be modified ------------------
-
+# 构建设置
+markdown: kramdown
 kramdown:
-  footnote_backlink: "&#8617;&#xfe0e;"
+  input: GFM
+  hard_wrap: false
   syntax_highlighter: rouge
-  syntax_highlighter_opts: # Rouge Options › https://github.com/jneen/rouge#full-options
-    css_class: highlight
-    # default_lang: console
+  syntax_highlighter_opts:
+    css_class: 'highlight'
     span:
       line_numbers: false
     block:
       line_numbers: true
       start_line: 1
 
-collections:
-  tabs:
-    output: true
-    sort_by: order
-
-defaults:
-  - scope:
-      path: "" # An empty string here means all files in the project
-      type: posts
-    values:
-      layout: post
-      comments: true # Enable comments in posts.
-      toc: true # Display TOC column in posts.
-      # DO NOT modify the following parameter unless you are confident enough
-      # to update the code of all other post links in this project.
-      permalink: /posts/:title/
-  - scope:
-      path: _drafts
-    values:
-      comments: false
-  - scope:
-      path: ""
-      type: tabs # see `site.collections`
-    values:
-      layout: page
-      permalink: /:title/
-
 sass:
   style: compressed
 
-compress_html:
-  clippings: all
-  comments: all
-  endings: all
-  profile: false
-  blanklines: false
-  ignore:
-    envs: [development]
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-seo-tag
+
+# ================================================================
+# 个人信息
+# ================================================================
+
+author:
+  name: "hdbuyer"
+  email: "你的邮箱@example.com"  # 请修改为你的邮箱
+  twitter: ""  # 你的Twitter用户名（可选）
+  github: hdbuyer  # 你的GitHub用户名
+
+# 头像设置
+avatar: "/assets/img/avatar.jpg"  # 头像图片路径
+
+# ================================================================
+# 语言和本地化
+# ================================================================
+
+lang: zh-CN
+# 或者英文：lang: en
+
+# ================================================================
+# 社交链接
+# ================================================================
+
+social:
+  # 取消注释并填写你的社交账号
+  # github: hdbuyer
+  # twitter: your_twitter_id
+  # facebook: your_facebook_id
+  # linkedin: your_linkedin_id
+  # stackoverflow: your_so_id  # 你的Stack Overflow用户ID
+  # dribbble: 
+  # behance: 
+  # instagram: 
+  # telegram: 
+  # rss: /blog/feed.xml  # RSS订阅链接
+
+# ================================================================
+# 评论系统设置
+# ================================================================
+
+comments:
+  active: ""  # 可选: giscus, utterances, disqus
+  # 如果需要启用评论，请取消下面的注释并配置
+  # giscus:
+  #   repo: hdbuyer/blog
+  #   repo_id: 
+  #   category: 
+  #   category_id: 
+  #   mapping: pathname
+  #   reactions_enabled: 1
+  #   theme: light
+
+# ================================================================
+# 分析工具
+# ================================================================
+
+analytics:
+  google: 
+    # 取消注释并添加你的Google Analytics跟踪ID
+    # id: "G-XXXXXXXXXX"
+  facebook:
+    # 取消注释并添加你的Facebook Pixel ID
+    # app_id: 
+    # pixels:
+
+# ================================================================
+# SEO 和网站验证
+# ================================================================
+
+seo:
+  # 取消注释并添加你的验证代码
+  # google_site_verification: 
+  # bing_site_verification: 
+  # baidu_site_verification: 
+  # yandex_site_verification: 
+  # naver_site_verification:
+
+# ================================================================
+# 网站外观和主题设置
+# ================================================================
+
+theme_mode: 
+  # 可选值: 
+  #   - "dark" # 始终深色模式
+  #   - "light" # 始终浅色模式
+  #   - "auto" # 跟随系统设置（默认）
+
+# 主题色调
+theme_color: auto
+# 或者指定颜色: theme_color: "#4fa4ff"
+
+# 代码高亮主题
+highlight_theme: auto
+# 可选: 
+#   - "light" 
+#   - "dark" 
+#   - "auto"
+
+# ================================================================
+# 首页设置
+# ================================================================
+
+home_posts:
+  # 首页显示类型
+  type: recent  # 可选: recent, pinned
+  # 置顶文章列表（当type为pinned时使用）
+  pinned:
+
+# ================================================================
+# 分类和标签设置
+# ================================================================
+
+categories:
+  - name: 技术
+    description: "技术相关文章"
+    color: "#4fa4ff"
+  - name: 生活
+    description: "生活感悟"
+    color: "#f4a521"
+  - name: 学习
+    description: "学习笔记"
+    color: "#34c85a"
+
+# ================================================================
+# 其他设置
+# ================================================================
+
+toc: true  # 是否在文章中显示目录
+
+math: true  # 是否启用数学公式支持
+
+mermaid: true  # 是否启用Mermaid图表支持
+
+# 图片路径设置
+img_cdn: ""  # 如果需要使用CDN，可以在这里设置
+
+# 默认图片
+default_image: "/assets/img/og-image.jpg"
+
+# ================================================================
+# 构建排除文件
+# ================================================================
 
 exclude:
   - "*.gem"
   - "*.gemspec"
-  - docs
-  - tools
-  - README.md
-  - LICENSE
-  - purgecss.js
-  - "*.config.js"
-  - "package*.json"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "node_modules/"
+  - "vendor/bundle/"
+  - "vendor/cache/"
+  - "vendor/gems/"
+  - "vendor/ruby/"
 
-jekyll-archives:
-  enabled: [categories, tags]
-  layouts:
-    category: category
-    tag: tag
-  permalinks:
-    tag: /tags/:name/
-    category: /categories/:name/
+# ================================================================
+# 自定义变量
+# ================================================================
+
+# 这里可以添加你自己的自定义变量
+custom:
+  motto: "保持学习，持续进步"
